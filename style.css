@@ -1,0 +1,257 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6fa;
+  color: #333;
+}
+
+header.main-header {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+header.main-header h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+header.main-header nav {
+  margin-top: 1rem;
+}
+
+header.main-header nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header.main-header nav a:hover {
+  color: #66ccff;
+}
+
+.section {
+  padding: 3rem 2rem;
+  animation: fadeInUp 1s ease both;
+}
+
+.blue-bg {
+  background-color: #e6f0ff;
+}
+
+h2 {
+  text-align: center;
+  color: #003366;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+ul li {
+  background: white;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #003366;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  max-width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #003366;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo */
+.logo {
+  max-width: 80px;
+  margin-bottom: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+
+.mvv-box {
+  background-color: #eaf3ff;
+  border-top: 5px solid #003366;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.mvv-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+*/
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: #003366;
+  color: white;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop.show {
+  display: block;
+  opacity: 1;
+}
+
+#backToTop.hide {
+  opacity: 0;
+}
+
+
+@media (max-width: 600px) {
+  header.main-header h1 {
+    font-size: 1.8rem;
+  }
+
+  header.main-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  .logo-img {
+    width: 70px;
+  }
+}
+
+.content-parrafo {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  background-color: #eaf3ff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #003366;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: justify;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-parrafo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
