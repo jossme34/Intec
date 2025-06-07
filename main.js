@@ -40,3 +40,11 @@ window.addEventListener('scroll', () => {
     backToTopBtn.classList.remove('show');
   }
 });
+
+// Menú hamburguesa
+const toggleButton = document.querySelector('.menu-toggle');
+const navlinks = document.querySelector('.nav-links');
+
+toggleButton.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});

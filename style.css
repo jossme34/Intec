@@ -191,7 +191,7 @@ footer {
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-*/
+
 #backToTop {
   position: fixed;
   bottom: 20px;
@@ -252,6 +252,50 @@ footer {
 .content-parrafo:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #003366;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 
