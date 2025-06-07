@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Menú hamburguesa
+// Menú hamburguesa toggle
 const toggleButton = document.querySelector('.menu-toggle');
 const navContainer = document.querySelector('.nav-links');
 
@@ -50,9 +50,10 @@ toggleButton.addEventListener('click', () => {
   navContainer.classList.toggle('active');
 });
 
-// Cierra el menú al seleccionar una opción
+// Cierra el menú al hacer clic en un enlace (en móvil)
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navContainer.classList.remove('active');
   });
 });
+
