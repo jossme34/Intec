@@ -253,50 +253,7 @@ footer {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-/* ======== NAVBAR EN ESCRITORIO (pantallas grandes) ======== */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-  font-weight: bold;
-}
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #66ccff;
-}
-
-/* ======== MENÚ HAMBURGUESA PROFESIONAL ======== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 2000;
-}
-
-.menu-toggle .bar {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  border-radius: 2px;
-}
-
-/* ======== MENÚ RESPONSIVO PARA MÓVILES ======== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -305,16 +262,15 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: fixed;
-    top: 0;
+    background-color: #003366;
+    position: absolute;
+    top: 100%; /* justo debajo del header */
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: rgba(0, 33, 66, 0.95);
+    padding: 1rem 0;
     z-index: 999;
-    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
   .nav-links.active {
@@ -322,8 +278,8 @@ footer {
   }
 
   .nav-links a {
-    font-size: 1.6rem;
-    margin: 1rem 0;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -334,3 +290,5 @@ footer {
     color: #66ccff;
   }
 }
+
+
