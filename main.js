@@ -1,4 +1,4 @@
-
+// Navegación suave
 const navLinks = document.querySelectorAll('header nav a');
 navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
@@ -8,7 +8,7 @@ navLinks.forEach(link => {
   });
 });
 
-
+// Animaciones al hacer scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -22,6 +22,7 @@ document.querySelectorAll('.section').forEach(section => {
   observer.observe(section);
 });
 
+// Botón "Volver arriba"
 const backToTopBtn = document.createElement('button');
 backToTopBtn.id = 'backToTop';
 backToTopBtn.textContent = '↑';
@@ -43,15 +44,15 @@ window.addEventListener('scroll', () => {
 
 // Menú hamburguesa
 const toggleButton = document.querySelector('.menu-toggle');
-const navlinks = document.querySelector('.nav-links');
+const navContainer = document.querySelector('.nav-links');
 
 toggleButton.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  navContainer.classList.toggle('active');
 });
 
+// Cierra el menú al seleccionar una opción
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+    navContainer.classList.remove('active');
   });
 });
-
