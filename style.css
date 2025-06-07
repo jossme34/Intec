@@ -253,6 +253,25 @@ footer {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
+/* ======== NAVBAR EN ESCRITORIO (pantallas grandes) ======== */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #66ccff;
+}
 
 /* ======== MENÚ HAMBURGUESA PROFESIONAL ======== */
 .menu-toggle {
@@ -277,7 +296,7 @@ footer {
   border-radius: 2px;
 }
 
-/* Responsive nav menu */
+/* ======== MENÚ RESPONSIVO PARA MÓVILES ======== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -298,6 +317,10 @@ footer {
     transition: opacity 0.3s ease;
   }
 
+  .nav-links.active {
+    display: flex;
+  }
+
   .nav-links a {
     font-size: 1.6rem;
     margin: 1rem 0;
@@ -309,9 +332,5 @@ footer {
 
   .nav-links a:hover {
     color: #66ccff;
-  }
-
-  .nav-links.active {
-    display: flex;
   }
 }
