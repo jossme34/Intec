@@ -270,23 +270,6 @@ footer {
   opacity: 0;
 }
 
-/* === CONTENIDO DE PÁRRAFO === */
-.content-parrafo {
-  background-color: #eaf3ff;
-  border-top: 5px solid #003366;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  border-radius: 10px;
-  max-width: 900px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  text-align: justify;
-  box-sizing: border-box;
-}
-
-
 .section {
   display: flex;
   flex-direction: column;
