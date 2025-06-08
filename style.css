@@ -272,18 +272,20 @@ footer {
 
 /* === CONTENIDO DE PÁRRAFO === */
 .content-parrafo {
-  width: 90%;
-  margin: 0 auto 2rem auto;
   background-color: #eaf3ff;
-  padding: 1.2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  border-top: 4px solid #003366;
+  border-top: 5px solid #003366;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.05rem;
   line-height: 1.7;
   text-align: justify;
   box-sizing: border-box;
 }
+
 
 .section {
   display: flex;
@@ -353,25 +355,11 @@ body.fade-out {
   }
 }
 
-@media (max-width: 600px) {
-  .content-parrafo {
-    padding: 1rem;
-    margin: 0 1rem 2rem 1rem;
-  }
-
   .section {
     padding: 2rem 1rem;
   }
 }
 
-@media (max-width: 600px) {
-  .content-parrafo {
-    max-width: 90%;          /* más flexible */
-    margin: 1rem auto;       /* centrado vertical y horizontal */
-    padding: 1rem 1.2rem;    /* padding más compacto */
-    font-size: 1rem;         /* texto más cómodo en móvil */
-    box-sizing: border-box; /* importante para no desbordar */
-  }
-}
+
 
 
