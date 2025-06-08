@@ -1,11 +1,14 @@
-body {
-  font-family: 'Poppins', sans-serif;
+/* === RESET GLOBAL === */
+html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
   background-color: #f4f6fa;
   color: #333;
 }
 
+/* === HEADER === */
 header.main-header {
   background-color: #003366;
   color: white;
@@ -22,18 +25,6 @@ header.main-header.scrolled {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-#scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 0%;
-  background: #66ccff;
-  z-index: 9999;
-  transition: width 0.2s ease;
-}
-
-
 header.main-header h1 {
   margin: 0;
   font-size: 3rem;
@@ -43,17 +34,25 @@ header.main-header nav {
   margin-top: 1rem;
 }
 
-header.main-header nav a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
   font-weight: bold;
-  transition: color 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-header.main-header nav a::after {
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: -3px;
@@ -66,11 +65,11 @@ header.main-header nav a::after {
   transition: transform 0.3s ease;
 }
 
-header.main-header nav a:hover::after {
+.nav-links a:hover::after {
   transform: scaleX(1);
 }
 
-header.main-header nav a:hover {
+.nav-links a:hover {
   color: #66ccff;
 }
 
@@ -83,18 +82,9 @@ header.main-header nav a:hover {
   outline-offset: 4px;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
+/* === SECTION === */
 .section {
   padding: 3rem 2rem;
-  animation: fadeInUp 1s ease both;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -105,7 +95,7 @@ header.main-header nav a:hover {
   transform: translateY(0);
 }
 
-
+/* === CARD === */
 .card {
   background: white;
   border-radius: 10px;
@@ -115,7 +105,7 @@ header.main-header nav a:hover {
   position: relative;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
 }
 
 .card.visible {
@@ -124,8 +114,8 @@ header.main-header nav a:hover {
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
@@ -142,7 +132,7 @@ header.main-header nav a:hover {
   position: absolute;
   bottom: -1.2rem;
   left: 50%;
-  transform: translateX(-50%) translateY(5px); /* ← parte nueva */
+  transform: translateX(-50%) translateY(5px);
   background-color: #003366;
   color: white;
   padding: 0.4rem 0.6rem;
@@ -151,16 +141,16 @@ header.main-header nav a:hover {
   opacity: 0;
   white-space: nowrap;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* ← incluye transform */
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
 }
 
 .card:hover::after {
   opacity: 1;
-  transform: translateX(-50%) translateY(0); /* ← sube suavemente */
+  transform: translateX(-50%) translateY(0);
 }
 
-
+/* === GRID === */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -170,6 +160,7 @@ header.main-header nav a:hover {
   padding: 2rem 0;
 }
 
+/* === LIST ITEMS === */
 ul {
   list-style: none;
   padding-left: 0;
@@ -191,6 +182,7 @@ ul li:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* === TITULOS === */
 h2 {
   text-align: center;
   color: #003366;
@@ -198,6 +190,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+/* === FOOTER === */
 footer {
   background-color: #003366;
   color: white;
@@ -207,6 +200,7 @@ footer {
   margin-top: 2rem;
 }
 
+/* === LOGO === */
 .logo {
   max-width: 80px;
   margin-bottom: 1rem;
@@ -233,26 +227,7 @@ footer {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
+/* === PARTE DE MISIÓN/VISIÓN === */
 .mvv-box {
   background-color: #eaf3ff;
   border-top: 5px solid #003366;
@@ -265,10 +240,11 @@ footer {
 }
 
 .mvv-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* === BOTÓN VOLVER ARRIBA === */
 #backToTop {
   position: fixed;
   bottom: 20px;
@@ -294,6 +270,7 @@ footer {
   opacity: 0;
 }
 
+/* === CONTENIDO DE PÁRRAFO === */
 .content-parrafo {
   max-width: 900px;
   margin: 0 auto 2rem auto;
@@ -313,6 +290,34 @@ footer {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* === ANIMACIONES === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* === FADE DE SCROLL === */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* === RESPONSIVE FIXED === */
 @media (max-width: 600px) {
   header.main-header h1 {
     font-size: 1.8rem;
@@ -331,74 +336,13 @@ footer {
 
   .grid {
     display: grid;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    grid-template-columns: 1fr;
     padding: 1rem;
     gap: 1rem;
+    max-width: 100%;
   }
 
   .card {
-    min-width: 80%;
-    scroll-snap-align: center;
+    min-width: auto;
   }
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-body.fade-out {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-/* Elementos ocultos al principio */
-.section,
-.card,
-ul li,
-h2 {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Se activa cuando son visibles */
-.section.visible,
-.card.visible,
-ul li.visible,
-h2.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 0.1.5s ease, box-shadow 0.1.5s ease, opacity 0.3s ease;
-}
-
-/* Aparece con animación */
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Efecto de "levantar" al pasar el cursor */
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-}
-
-.mvv-box:hover,
-ul li:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
