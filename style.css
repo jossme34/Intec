@@ -346,3 +346,10 @@ body.fade-out {
     min-width: auto;
   }
 }
+
+@media (max-width: 600px) {
+  .content-parrafo {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
