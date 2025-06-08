@@ -276,7 +276,7 @@ footer {
   max-width: 900px;
   margin: 0 auto 2rem auto;
   background-color: #eaf3ff;
-  padding: 1.5rem 2rem;
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-top: 4px solid #003366;
@@ -352,11 +352,12 @@ body.fade-out {
 @media (max-width: 600px) {
   .content-parrafo {
     padding: 1rem;
-    margin: 1rem auto;
+    margin: 0 1rem 2rem 1rem;
   }
 
   .section {
     padding: 2rem 1rem;
   }
 }
+
 
