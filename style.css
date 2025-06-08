@@ -272,11 +272,10 @@ footer {
 
 /* === CONTENIDO DE PÁRRAFO === */
 .content-parrafo {
-  width: 100%;
-  max-width: 900px;
+  width: 90%;
   margin: 0 auto 2rem auto;
   background-color: #eaf3ff;
-  padding: 1rem;
+  padding: 1.2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-top: 4px solid #003366;
@@ -284,7 +283,12 @@ footer {
   line-height: 1.7;
   text-align: justify;
   box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-parrafo:hover {
