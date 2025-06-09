@@ -341,7 +341,88 @@ body.fade-out {
   .section {
     padding: 2rem 1rem;
   }
+
+/* === FORMULARIO DE SUGERENCIAS – VERSIÓN MEJORADA === */
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.suggestion-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.suggestion-form input,
+.suggestion-form textarea {
+  padding: 1rem 1.2rem;
+  border: 1.5px solid #d2d8e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f8ff;
+  color: #333;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.suggestion-form input::placeholder,
+.suggestion-form textarea::placeholder {
+  color: #999;
+}
+
+.suggestion-form input:focus,
+.suggestion-form textarea:focus {
+  border-color: #003366;
+  background-color: #fff;
+  outline: none;
+}
+
+.suggestion-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.suggestion-form button {
+  background-color: #003366;
+  color: #fff;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-form button:hover {
+  background-color: #005599;
+  transform: translateY(-2px);
+}
+
+.suggestion-form button:active {
+  transform: scale(0.98);
+}
+
+#mensaje-formulario {
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  color: #003366;
+  font-size: 0.95rem;
+}
+
+
+
 
 
 

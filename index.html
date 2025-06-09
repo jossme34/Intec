@@ -27,6 +27,8 @@
     <a href="#valores">Valores</a>
     <a href="#propuestas">Propuestas</a>
     <a href="#planilla">Planilla</a>
+    <a href="#sugerencias">Sugerencias</a>
+
   </nav>
 </header>
 
@@ -126,6 +128,39 @@
       </div>
     </div>
   </section>
+
+  <section id="sugerencias" class="section">
+  <h2>Escuchamos tus sugerencias</h2>
+  <p>Tu opinión es muy valiosa para seguir mejorando.</p>
+
+  <form id="form-sugerencias" class="suggestion-form">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <textarea name="sugerencia" rows="5" placeholder="Escribe tu sugerencia aquí..." required></textarea>
+    <button type="submit">Enviar sugerencia</button>
+    <p id="mensaje-formulario" style="margin-top: 10px;"></p>
+  </form>
+</section>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("Uutf6skUAWqtir2Zn"); // ← Reemplaza aquí
+  })();
+
+  document.getElementById('form-sugerencias').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_6wq3zva', 'template_7cz1g39', this)
+      .then(function() {
+       document.getElementById('mensaje-formulario').innerText = "✅ ¡Sugerencia enviada con éxito!";
+      document.getElementById('form-sugerencias').reset(); // ← Esto borra los campos
+      }, function(error) {
+
+        document.getElementById('mensaje-formulario').innerText = "❌ Hubo un error. Intenta de nuevo.";
+        console.error('FAILED...', error);
+      });
+  });
+</script>
 
   <footer>
   <p>&copy; <span id="year"></span> InTec - Sociedad Estudiantil Ingeniería en Infrotecnología</p>
